@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Central de Eventos</string>
+
+    <string name="icon_close">X</string>
+    <string name="checkin">Check-in</string>
+    <string name="share">Compartilhar</string>
+    <string name="event_details">Detalhes do evento</string>
+    <string name="next_events">Próximos eventos</string>
+
+    <string name="error_find_events">Erro ao buscar os Eventos</string>
+    <string name="error_find_event">Erro ao buscar Evento</string>
+    <string name="error_check_in">Erro ao realizar check-in</string>
+    <string name="success_check_in">Check-in realizado com sucesso: </string>
 </resources>
