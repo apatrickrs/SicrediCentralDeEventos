@@ -56,7 +56,6 @@ class EventRepositoryImpl : EventRepository {
 
                 override fun onError(e: Throwable) {
                     e.printStackTrace()
-//                    event.postValue(emptyList())
                 }
             })
 
@@ -81,7 +80,6 @@ class EventRepositoryImpl : EventRepository {
 
                 override fun onError(e: Throwable) {
                     e.printStackTrace()
-//                    event.postValue(emptyList())
                 }
             })
 

@@ -1,4 +1,4 @@
-package com.sicredi.teste.centraldeeventos
+package com.sicredi.teste.centraldeeventos.presenter
 
 interface BannerEventsClick {
 

@@ -8,7 +8,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.Button
 import android.widget.TextView
-import com.sicredi.teste.centraldeeventos.BannerEventsClick
 import com.sicredi.teste.centraldeeventos.R
 import com.sicredi.teste.centraldeeventos.data.model.Event
 import java.text.NumberFormat
@@ -62,8 +61,8 @@ object Component {
 
     @SuppressLint("SimpleDateFormat")
     fun formatDate(date: Long): String {
-        val date = Date(date)
+        val dateInstance = Date(date)
         val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-        return dateFormat.format(date)
+        return dateFormat.format(dateInstance)
     }
 }

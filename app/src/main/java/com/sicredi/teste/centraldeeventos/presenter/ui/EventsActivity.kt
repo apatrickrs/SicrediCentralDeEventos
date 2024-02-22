@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sicredi.teste.centraldeeventos.BannerEventsClick
+import com.sicredi.teste.centraldeeventos.presenter.BannerEventsClick
 import com.sicredi.teste.centraldeeventos.R
 import com.sicredi.teste.centraldeeventos.data.model.CheckInEvent
 import com.sicredi.teste.centraldeeventos.data.model.Event
