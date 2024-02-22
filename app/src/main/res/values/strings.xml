@@ -7,8 +7,11 @@
     <string name="event_details">Detalhes do evento</string>
     <string name="next_events">Próximos eventos</string>
 
+    <string name="looking_for_events">Buscando Eventos</string>
     <string name="error_find_events">Erro ao buscar os Eventos</string>
     <string name="error_find_event">Erro ao buscar Evento</string>
     <string name="error_check_in">Erro ao realizar check-in</string>
     <string name="success_check_in">Check-in realizado com sucesso: </string>
+
+    <string name="dummy_data">Lorem ipsum dolor sit amet</string>
 </resources>

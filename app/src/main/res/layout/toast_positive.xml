@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toast_positive_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@drawable/bg_toast_positive">
+
+    <ImageView
+        android:id="@+id/iconToastPositive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_toast_positive"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/infoToastPositive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="@string/dummy_data"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+</LinearLayout>

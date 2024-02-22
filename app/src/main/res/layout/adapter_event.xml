@@ -39,13 +39,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="serif"
-                android:textColor="@android:color/black" />
+                android:textColor="@color/whiteIce" />
 
             <TextView
                 android:id="@+id/adapterDateEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="serif" />
+                android:textColor="@color/whiteIce" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

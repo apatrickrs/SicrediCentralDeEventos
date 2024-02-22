@@ -1,4 +1,4 @@
-package com.sicredi.teste.centraldeeventos.presenter
+package com.sicredi.teste.centraldeeventos.presenter.ui
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -6,7 +6,9 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.sicredi.teste.centraldeeventos.R
 import com.sicredi.teste.centraldeeventos.data.model.Event
@@ -21,6 +23,7 @@ object Component {
         val banner = Dialog(context)
         banner.setContentView(R.layout.event_details_banner)
 
+        val loading: ProgressBar = banner.findViewById(R.id.loadingEventBannerView)
         val bannerTitleEvent: TextView = banner.findViewById(R.id.bannerTitleEvent)
         val bannerDateEvent: TextView = banner.findViewById(R.id.bannerDateEvent)
         val bannerDescriptionEvent: TextView = banner.findViewById(R.id.bannerDescriptionEvent)
@@ -36,6 +39,8 @@ object Component {
         bannerPriceEvent.text = NumberFormat
             .getCurrencyInstance(Locale("pt", "BR"))
             .format(event.price)
+
+        loading.visibility = View.GONE
 
         btnClose.setOnClickListener {
             banner.dismiss()

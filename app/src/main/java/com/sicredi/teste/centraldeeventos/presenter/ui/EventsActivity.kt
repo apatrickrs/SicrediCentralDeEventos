@@ -2,17 +2,14 @@ package com.sicredi.teste.centraldeeventos.presenter.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sicredi.teste.centraldeeventos.presenter.BannerEventsClick
 import com.sicredi.teste.centraldeeventos.R
 import com.sicredi.teste.centraldeeventos.data.model.CheckInEvent
 import com.sicredi.teste.centraldeeventos.data.model.Event
 import com.sicredi.teste.centraldeeventos.databinding.ActivityMainBinding
 import com.sicredi.teste.centraldeeventos.domain.EventsViewModel
-import com.sicredi.teste.centraldeeventos.presenter.Component
-import com.sicredi.teste.centraldeeventos.presenter.OnEventClick
 import com.sicredi.teste.centraldeeventos.presenter.adapter.AdapterEvent
 
 class EventsActivity : AppCompatActivity() {
@@ -24,6 +21,8 @@ class EventsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         view = ActivityMainBinding.inflate(layoutInflater)
         setContentView(view.root)
+
+        Alert.success(this, getString(R.string.looking_for_events))
 
         events = ViewModelProvider(this)[EventsViewModel::class.java]
         requestEvents()
@@ -37,6 +36,8 @@ class EventsActivity : AppCompatActivity() {
                 requestEventById(event.id.toInt())
             }
         })
+
+        hideLoading()
     }
 
     private fun requestEvents() {
@@ -44,7 +45,8 @@ class EventsActivity : AppCompatActivity() {
             if (it.isNotEmpty()) {
                 setNextEvents(it)
             } else {
-                showMessageStatus(getString(R.string.error_find_events))
+                Alert.failed(this, getString(R.string.error_find_events))
+                hideLoading()
             }
         }
     }
@@ -58,7 +60,7 @@ class EventsActivity : AppCompatActivity() {
                     }
                 })
             } else {
-                showMessageStatus(getString(R.string.error_find_event))
+                Alert.failed(this, getString(R.string.error_find_event))
             }
         }
     }
@@ -72,14 +74,14 @@ class EventsActivity : AppCompatActivity() {
 
         events.doCheckinOnEvent(checkinData).observe(this) {
             if (it.isNotEmpty()) {
-                showMessageStatus(getString(R.string.success_check_in) + it)
+                Alert.success(this, getString(R.string.success_check_in) + it)
             } else {
-                showMessageStatus(getString(R.string.error_check_in))
+                Alert.failed(this, getString(R.string.error_check_in))
             }
         }
     }
 
-    private fun showMessageStatus(info: String) {
-        Toast.makeText(this, info, Toast.LENGTH_SHORT).show()
+    private fun hideLoading() {
+        view.loadingEventsView.visibility = View.GONE
     }
 }

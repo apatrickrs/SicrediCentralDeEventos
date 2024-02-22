@@ -3,15 +3,14 @@ package com.sicredi.teste.centraldeeventos.presenter.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.makeramen.roundedimageview.RoundedImageView
 import com.sicredi.teste.centraldeeventos.R
 import com.sicredi.teste.centraldeeventos.data.model.Event
-import com.sicredi.teste.centraldeeventos.presenter.Component
-import com.sicredi.teste.centraldeeventos.presenter.OnEventClick
+import com.sicredi.teste.centraldeeventos.presenter.ui.Component
+import com.sicredi.teste.centraldeeventos.presenter.ui.OnEventClick
 import com.squareup.picasso.Picasso
 
 class AdapterEvent(
